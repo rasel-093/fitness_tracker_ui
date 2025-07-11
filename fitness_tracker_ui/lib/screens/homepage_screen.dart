@@ -1,3 +1,4 @@
+import 'package:fitness_tracker_ui/widget/side_menu_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomepageScreen extends StatelessWidget {
@@ -6,11 +7,15 @@ class HomepageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Fitness Tracker')),
-      body: Center(
-        child: Text(
-          'Welcome to the Fitness Tracker App',
-          style: TextStyle(fontSize: 24, color: Colors.white),
+      body: SafeArea(
+        child: SafeArea(
+          child: Row(
+            children: [
+              Expanded(flex: 2, child: SizedBox(child: SideMenuWidget())),
+              Expanded(flex: 7, child: Container(color: Colors.green)),
+              Expanded(flex: 3, child: Container(color: Colors.blue)),
+            ],
+          ),
         ),
       ),
     );
